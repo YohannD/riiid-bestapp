@@ -10,11 +10,8 @@ folder_source, _ = split(Heroku.__file__)
 if __name__ == "__main__":
     params = dict(nrows=1000,
                   upload=False,
-                  local=True,  # set to False to get data from GCP (Storage or BigQuery)
+                  local=False,  # set to False to get data from GCP (Storage or BigQuery)
                   optimize=False)
     df = get_data(**params)
     df = clean_df(df)
-    dir = Direction()
-    dist_to_center = DistanceToCenter()
-    addw = AddWeatherData()
-    X = addw.transform(df)
+  

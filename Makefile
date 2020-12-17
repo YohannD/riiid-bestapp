@@ -1,5 +1,5 @@
-PROJECT_ID=wagon-bootcamp-256316
-BUCKET_NAME=wagon-ml-bizot-27
+PROJECT_ID=speedy-area-297510
+BUCKET_NAME=riiid-project
 
 # ----------------------------------
 #         LOCAL SET UP

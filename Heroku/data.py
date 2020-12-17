@@ -13,11 +13,17 @@ def get_train_data(type='random',nrows=20000, local=False, **kwargs):
         if local:
             path = '/Users/Yohann/code/YohannD/riiid-project/notebooks/sequence_random.csv'
             df_train_random = pd.read_csv(path)
+        else:
+            path = 'gs://riiid-project/data/sequence_random.csv'
+            df_train_random = pd.read_csv(path)
         return df_train_random
 
     if type=='sorted':
         if local:
             path = '/Users/Yohann/code/YohannD/riiid-project/notebooks/sequence_sorted.csv'  
+            df_train_random = pd.read_csv(path)
+        else:
+            path = 'gs://riiid-project/data/sequence_sorted.csv'
             df_train_random = pd.read_csv(path)
         return df_train_random
 
@@ -28,7 +34,8 @@ def get_test_data(local=False):
         path = '/Users/Yohann/code/YohannD/riiid-project/notebooks/toeic_question.csv'
         df_test = pd.read_csv(path)
     else:
-        print('There was a bug when getting test data')
+        path = 'gs://riiid-project/data/toeic_question.csv'
+        df_test = pd.read_csv(path)
     return df_test
 
 def get_qstats(local=False):
@@ -36,7 +43,8 @@ def get_qstats(local=False):
         path= '/Users/Yohann/code/YohannD/riiid-project/data/qstats_for_M1'
         qstats = pd.read_csv(path)
     else:
-        print('There was a bug when getting qstats')
+        path= 'gs://riiid-project/data/qstats_for_M1'
+        qstats = pd.read_csv(path)
     return qstats
 
 def clean_df(df, test=False):
@@ -68,7 +76,10 @@ def df_optimized(df, verbose=True, **kwargs):
 
 def get_pipeline_features_list(local=False):
     if local:
-        path=pd.read_csv('/Users/Yohann/code/YohannD/riiid-project/models/xgboost_pipe_M1_features_list')
+        path= '/Users/Yohann/code/YohannD/riiid-project/models/xgboost_pipe_M1_features_list'
+        pipeline_features_list = pd.DataFrame(path)
+    else:
+        path= 'gs://riiid-project/data/xgboost_pipe_M1_features_list'
         pipeline_features_list = pd.DataFrame(path)
     return pipeline_features_list
 

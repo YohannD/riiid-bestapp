@@ -15,7 +15,7 @@ import random
 from Heroku.data import *
 from scipy import misc
 
-pipeline_features_list=pd.read_csv('/Users/Yohann/code/YohannD/riiid-project/models/xgboost_pipe_M1_features_list')
+pipeline_features_list=get_pipeline_features_list(local=False)
 txt_sorted_model = pred_answers(loop_length=100, question_selection_strategy='sorted')
 txt_random_model = pred_answers(loop_length=100, question_selection_strategy='random')
 k_tracing_model = pred_answers(loop_length=100, question_selection_strategy='k_tracing')
@@ -103,17 +103,7 @@ def main():
             selected_models.append(y_random)
         if cols_model[2].checkbox('Knowledge Tracing'):
             selected_models.append(y_k_tracing)
-        cols_model[3].checkbox('Reinforcement Learning XGK+ Ultra')
-
-
-
-
-        # inputs from user
-        #reading_proficiency = st.text_input("Listening proficiency level:", "50%")
-        #listening_proficiency = st.text_input("Reading proficiency level:", "50%")
-        
-
-        
+        cols_model[3].checkbox('Reinforcement Learning XGK+ Ultra')        
 
 
         if st.button('Start', False):
@@ -128,94 +118,12 @@ def main():
             #st.line_chart(y_k_tracing)
 
 
-        
-
-        ### Initialize the user to None or starting level ###
-        
-
-        # def radar_chart(days=days):
-
-        #    for i in range(loop_length):
-            ### CHOIX DE LA QUESTION ###
-        #        if question_selection_strategy=='random':
-        #            next_question_id=random.choice(qstats.content_id.to_list())
-        
-        
-        #        user_history=user_history_update(0,
-        #                                 next_question_id,
-        #                                 qstats,
-        #                                 user_history,
-        #                                 prior_question_had_explanation=random.uniform(0, 1)>0.1)
-                ### PREDICTION ###
-        #        user_history.iloc[-1,-1]\
-        #        = pipeline.predict_proba(user_history[pipeline_features_list.feature.to_list()].iloc[-2:-1])[0,1]
-        #        part = range(7)
-            
-        #    df_part = user_history[['part', 'user_avg_score_cum_part1','user_avg_score_cum_part2','user_avg_score_cum_part3',
-        #        'user_avg_score_cum_part4', 'user_avg_score_cum_part5', 'user_avg_score_cum_part6', 'user_avg_score_cum_part7']]
-        #    fig = px.line_polar(data_frame=df_part.iloc[[-1]], r=part, theta=df_part.drop(columns='part').columns, line_close=True)
-        #    placeholder.write(fig)
-
-            #latest_session = st.empty()
-        #    df_part = user_history[['part', 'user_avg_score_cum_part1','user_avg_score_cum_part2','user_avg_score_cum_part3',
-        #        'user_avg_score_cum_part4', 'user_avg_score_cum_part5', 'user_avg_score_cum_part6', 'user_avg_score_cum_part7']]
-        #    st.write(df_part)
-        #    fig = px.line_polar(data_frame=df_part.iloc[[i]], r=df_part.part.unique()[1:], theta=df_part.drop(columns='part').columns, line_close=True)
-        #        placeholder.write(fig)
-
-        
-        
-
-                #bar.progress(1)
-
-        #bars = alt.Chart(data).mark_bar().encode(
-        #x=X('1:Q',axis=Axis(title='Your average score')),
-        #y=Y('0:Q',axis=Axis(title='Model'))
-        #).properties(
-        #width=650, 
-        #height=400
-        #)
-
-        #bar_plot = st.altair_chart(bars)
-#
-
-        # def plot_bar_animated_altair(df):
-           #bars = alt.Chart(df, title="Score after some questions").encode(
-            #x=X('user_activity_cumcount:Q',axis=Axis(title='Number of questions')), 
-            #y=Y('user_avg_score_cum:Q',axis=Axis(title='Model'), sort='-x')
-            #).properties(
-                 #width=650, 
-                 #height=400
-           #)
-
-        #st.dataframe(data)
-
-                #bars = plot_bar_animated_altair(data)
-                #time.sleep(0.01)
-
-                #bar_plot.altair_chart(bars)
-
-                #plot_url = py.plot(fig)
-
-
-                #st.write(TEACHER_HTML, unsafe_allow_html=True)
-
-
-
-            
-                #time.sleep(0.1)
-
-#                
-#                #res = pipeline.predict(data[COLS])
-                #st.write('💸 TOEIC Score:', res)
-                #st.map(data=data)
-
 
         # print(colored(proc.sf_query, "blue"))
         # proc.test_execute()
 if __name__ == "__main__":
     df_train_sorted, df_train_random, df_test, qstats = read_data()
-    pipeline = pickle.load(open('/Users/Yohann/code/YohannD/riiid-project/models/xgboost_pipe_M1.pkl', 'rb'))
+    pipeline = pickle.load(open('gs://riiid-project/models/xgboost_pipe_M1.pkl'))
     main()
             #main()
 ##

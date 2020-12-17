@@ -5,7 +5,7 @@ from Heroku.data import get_train_data, get_test_data, get_qstats, get_pipeline_
 import random
 import pickle
 
-pipeline = pickle.load(open('/Users/Yohann/code/YohannD/riiid-project/models/xgboost_pipe_M1.pkl', 'rb'))
+pipeline = pickle.load(open('gs://riiid-project/models/xgboost_pipe_M1.pkl'))
 df_train_sorted = get_train_data(type='sorted' , local=True)
 df_train_random = get_train_data(type='random', local=True)
 pipeline_features_list = get_pipeline_features_list(local=True)
