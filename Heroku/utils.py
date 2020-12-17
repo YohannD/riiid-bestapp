@@ -1,7 +1,7 @@
 import time
 import pandas as pd
 import numpy as np
-from Heroku.data import get_train_data, get_test_data, get_qstats, get_pipeline_features_list
+from Heroku.data import get_train_data, get_test_data, get_qstats
 import random
 import pickle
 import joblib
