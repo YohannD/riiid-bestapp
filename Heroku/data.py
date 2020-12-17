@@ -7,7 +7,7 @@ from sklearn.ensemble import HistGradientBoostingClassifier
 def get_train_data(type='random',nrows=20000, local=False, **kwargs):
     """method to get the training data (or a portion of it) from google cloud bucket"""
     # Add Client() here
-    client = storage.Client()
+    #client = storage.Client()
 
     if type=='random':
         if local:
@@ -28,7 +28,7 @@ def get_train_data(type='random',nrows=20000, local=False, **kwargs):
         return df_train_random
 
 def get_test_data(local=False):
-    client = storage.Client()
+    #client = storage.Client()
 
     if local:
         path = '/Users/Yohann/code/YohannD/riiid-project/notebooks/toeic_question.csv'
@@ -50,17 +50,6 @@ def get_qstats(local=False):
 def clean_df(df, test=False):
     df = df.dropna(how='any', axis='rows')
     return df
-
-def get_pipeline_features_list(local=False):
-    if local:
-        path= '/Users/Yohann/code/YohannD/riiid-project/models/xgboost_pipe_M1_features_list'
-        pipeline_features_list = pd.DataFrame(path)
-    else:
-        path= 'gs://riiid-project/data/xgboost_pipe_M1_features_list'
-        pipeline_features_list = pd.DataFrame(path)
-    return pipeline_features_list
-
-
 
 def infer_dtypes(path):
     """
