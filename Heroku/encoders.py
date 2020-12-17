@@ -4,8 +4,7 @@ import pandas as pd
 import numpy as np
 from sklearn.base import BaseEstimator, TransformerMixin
 
-from Heroku.data import df_optimized, get_data, clean_df, DIST_ARGS
-from Heroku.utils import haversine_vectorized, minkowski_distance
+from Heroku.data import df_optimized, get_data, clean_df
 import pygeohash as gh
 import Heroku
 

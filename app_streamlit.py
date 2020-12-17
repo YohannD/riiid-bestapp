@@ -1,34 +1,21 @@
 from datetime import datetime
-
 import joblib
 import pandas as pd
 import pytz
-from sklearn.model_selection import cross_val_score, cross_val_predict, cross_validate, train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn. metrics import roc_auc_score, accuracy_score
 import numpy as np
 from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.preprocessing import MinMaxScaler
 from sklearn.pipeline import make_pipeline
 import seaborn as sns
 import streamlit as st
 import time
 import random
-import plotly.express as px
-import altair as alt
-from altair import Chart, X, Y, Axis, SortField, OpacityValue
 import matplotlib.pyplot as plt
 from Heroku.utils import user_history_update, pred_answers
 import pickle
 import random
-import plotly.graph_objs as go
-from plotly import tools
-import plotly.offline as py
-import plotly.express as px
 from Heroku.data import *
 import matplotlib.pyplot as plt
 from scipy import misc
-#py.sign_in('ydoillon', 'z1TCUMkdBwGVsYWZZ55f')
 
 pipeline_features_list=pd.read_csv('/Users/Yohann/code/YohannD/riiid-project/models/xgboost_pipe_M1_features_list')
 txt_sorted_model = pred_answers(loop_length=100, question_selection_strategy='sorted')
