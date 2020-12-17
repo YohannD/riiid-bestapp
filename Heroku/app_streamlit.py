@@ -21,6 +21,7 @@ kt_beginner = df['Knowledge Tracing']
 kt_intermediate = df['Knowledge Tracing ']
 kt_average = df['Knowledge Tracing  ']
 kt_fluent = df['Knowledge Tracing   ']
+#lool
 
 def main():
     
