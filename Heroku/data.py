@@ -3,12 +3,6 @@ from google.cloud import storage
 from Heroku.params import BUCKET_NAME, BUCKET_TRAIN_DATA_PATH
 from sklearn.experimental import enable_hist_gradient_boosting
 from sklearn.ensemble import HistGradientBoostingClassifier
-#'papate'
-
-DIST_ARGS = dict(start_lat="pickup_latitude",
-                 start_lon="pickup_longitude",
-                 end_lat="dropoff_latitude",
-                 end_lon="dropoff_longitude")
 
 def get_train_data(type='random',nrows=20000, local=False, **kwargs):
     """method to get the training data (or a portion of it) from google cloud bucket"""

@@ -1,9 +1,6 @@
 from os.path import split
-
 import pandas as pd
 import numpy as np
-from sklearn.base import BaseEstimator, TransformerMixin
-
 from Heroku.data import df_optimized, get_data, clean_df
 import pygeohash as gh
 import Heroku

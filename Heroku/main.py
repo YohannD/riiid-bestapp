@@ -1,8 +1,6 @@
 import warnings
 from pprint import pprint
-
 from termcolor import colored
-
 from Heroku.data import clean_df, get_data
 from Heroku.trainer import Trainer
 

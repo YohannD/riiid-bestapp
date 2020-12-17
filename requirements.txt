@@ -2,6 +2,7 @@ pytz
 gcsfs==0.6.0
 pandas==0.24.2
 scikit-learn==0.23.2
+seaborn
 google-cloud-storage==1.26.0
 mlflow==1.8.0
 joblib==0.14.1

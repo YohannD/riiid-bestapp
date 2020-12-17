@@ -9,12 +9,10 @@ import seaborn as sns
 import streamlit as st
 import time
 import random
-import matplotlib.pyplot as plt
 from Heroku.utils import user_history_update, pred_answers
 import pickle
 import random
 from Heroku.data import *
-import matplotlib.pyplot as plt
 from scipy import misc
 
 pipeline_features_list=pd.read_csv('/Users/Yohann/code/YohannD/riiid-project/models/xgboost_pipe_M1_features_list')

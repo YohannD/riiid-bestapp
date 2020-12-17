@@ -2,28 +2,13 @@ import multiprocessing
 import time
 import warnings
 from tempfile import mkdtemp
-
-import category_encoders as ce
 import joblib
-import mlflow
 import pandas as pd
 from Heroku.data import get_data, clean_df, DIST_ARGS
-from Heroku.encoders import TimeFeaturesEncoder, DistanceTransformer, AddGeohash, OptimizeSize, Direction, \
-    DistanceToCenter
 from Heroku.gcp import storage_upload
 from Heroku.params import MODEL_VERSION
-from Heroku.utils import compute_rmse, simple_time_tracker
-from memoized_property import memoized_property
-from mlflow.tracking import MlflowClient
-from psutil import virtual_memory
-from sklearn.compose import ColumnTransformer
-from sklearn.ensemble import GradientBoostingRegressor, RandomForestRegressor
-from sklearn.linear_model import Lasso, Ridge, LinearRegression
-from sklearn.model_selection import train_test_split, RandomizedSearchCV
-from sklearn.pipeline import Pipeline, make_pipeline
-from sklearn.preprocessing import OneHotEncoder, RobustScaler
+from sklearn.ensemble import HistGradientBoostingRegressor
 from termcolor import colored
-from xgboost import XGBRegressor
 
 # Mlflow wagon server
 MLFLOW_URI = "https://mlflow.lewagon.co/"
