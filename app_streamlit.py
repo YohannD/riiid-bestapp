@@ -15,7 +15,7 @@ import random
 from Heroku.data import *
 from scipy import misc
 
-pipeline_features_list=get_pipeline_features_list(local=False)
+
 txt_sorted_model = pred_answers(loop_length=100, question_selection_strategy='sorted')
 txt_random_model = pred_answers(loop_length=100, question_selection_strategy='random')
 k_tracing_model = pred_answers(loop_length=100, question_selection_strategy='k_tracing')
@@ -26,10 +26,10 @@ y_k_tracing = pd.Series(k_tracing_model['user_avg_score_cum'])
 
 @st.cache
 def read_data(n_rows=10000):
-    df_train_sorted = get_train_data(type='sorted' ,n_rows=n_rows, local=True)
-    df_train_random = get_train_data(type='random', n_rows=n_rows, local=True)
-    df_test = get_test_data(local=True)
-    qstats = get_qstats(local=True)
+    df_train_sorted = get_train_data(type='sorted' ,n_rows=n_rows, local=False)
+    df_train_random = get_train_data(type='random', n_rows=n_rows, local=False)
+    df_test = get_test_data(local=False)
+    qstats = get_qstats(local=False)
     return df_train_sorted, df_train_random, df_test, qstats
 
 
@@ -117,13 +117,10 @@ def main():
             #st.line_chart(y_random)
             #st.line_chart(y_k_tracing)
 
-
-
         # print(colored(proc.sf_query, "blue"))
         # proc.test_execute()
 if __name__ == "__main__":
-    df_train_sorted, df_train_random, df_test, qstats = read_data()
-    pipeline = pickle.load(open('gs://riiid-project/models/xgboost_pipe_M1.pkl'))
+    #df_train_sorted, df_train_random, df_test, qstats = read_data()
     main()
             #main()
 ##

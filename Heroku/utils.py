@@ -4,13 +4,14 @@ import numpy as np
 from Heroku.data import get_train_data, get_test_data, get_qstats, get_pipeline_features_list
 import random
 import pickle
+import joblib
 
-pipeline = pickle.load(open('gs://riiid-project/models/xgboost_pipe_M1.pkl'))
-df_train_sorted = get_train_data(type='sorted' , local=True)
-df_train_random = get_train_data(type='random', local=True)
-pipeline_features_list = get_pipeline_features_list(local=True)
-df_test = get_test_data(local=True)
-qstats = get_qstats(local=True)
+pipeline = pickle.load(open('models/xgboost_pipe_M1.pkl', 'rb'))
+df_train_sorted = get_train_data(type='sorted' , local=False)
+df_train_random = get_train_data(type='random', local=False)
+pipeline_features_list= pd.read_csv('models/xgboost_pipe_M1_features_list')
+df_test = get_test_data(local=False)
+qstats = get_qstats(local=False)
 
 def user_history_update(content_type_id,
                         content_id,
