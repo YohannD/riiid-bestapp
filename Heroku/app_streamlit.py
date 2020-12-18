@@ -7,7 +7,7 @@ from Heroku.data import get_data
 from PIL import Image
 
 df = get_data()
-image = Image.open('Heroku/data/under_construction.png')
+image = Image.open('data/under_construction.png')
 
 random_beginner = df['Random']
 random_intermediate = df['Random ']
@@ -47,7 +47,7 @@ def main():
         
     if option == "Beginner":
 
-        st.sidebar.text_area("Profile", "Hello World 🌍")
+        st.sidebar.text_area("Profile", "Hello World")
 
         selected_models = []        
 
@@ -69,25 +69,24 @@ def main():
         cols_level[5].text_input('Single Texts', score_6)
         cols_level[6].text_input('Double Texts', score_7)
         
-        st.header("Learning Mode")
+        st.header("Learning Mode 📚 👨‍🏫 📲 🔥")
 
         cols_model = st.beta_columns(5)
 
-        if cols_model[0].checkbox('Textbook 📚'):
+        if cols_model[0].checkbox('Textbook'):
             selected_models.append(sorted_beginner)
-        if cols_model[1].checkbox('Random 🔁'):
+        if cols_model[1].checkbox('Random'):
             selected_models.append(random_beginner)
-        if cols_model[2].checkbox('Sadist Teacher 👨‍🏫'):
+        if cols_model[2].checkbox('Sadist Teacher'):
             selected_models.append(sadist_beginner)    
-        if cols_model[3].checkbox('Knowledge Tracing 📲'):
+        if cols_model[3].checkbox('Knowledge Tracing'):
             selected_models.append(kt_beginner)
-        if cols_model[4].checkbox('Reinforcement Learning + Ultra 🔥'):
-            st.write(\
-                <iframe src="https://giphy.com/embed/l1J3IHzSUmCpXThqo" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/thebachelorau-bachelor-bachelorau-l1J3IHzSUmCpXThqo">via GIPHY</a></p>)
+        if cols_model[4].checkbox('Reinforcement Learning XGK+ Ultra'):
+            st.image(image, caption='To be continued', use_column_width=False)
  
     if option == "Bookworm":
 
-        st.sidebar.text_area("Profile", "I've read all of Shakespeare's works but never left Lozère 🐛📚")
+        st.sidebar.text_area("Profile", "I've read all of Shakespeare's works but never left Lozère")
         
         selected_models = []
 
@@ -109,24 +108,24 @@ def main():
         cols_level[5].text_input('Single Texts', score_6)
         cols_level[6].text_input('Double Texts', score_7)
         
-        st.header("Learning Mode")
+        st.header("Learning Mode 📚 👨‍🏫 📲 🔥")
 
         cols_model = st.beta_columns(5)
 
-        if cols_model[0].checkbox('Textbook 📚'):
+        if cols_model[0].checkbox('Textbook'):
             selected_models.append(sorted_intermediate)
-        if cols_model[1].checkbox('Random 🔁'):
+        if cols_model[1].checkbox('Random'):
             selected_models.append(random_intermediate)
-        if cols_model[2].checkbox('Sadist Teacher 👨‍🏫'):
+        if cols_model[2].checkbox('Sadist Teacher'):
             selected_models.append(sadist_intermediate)
-        if cols_model[3].checkbox('Knowledge Tracing 📲'):
+        if cols_model[3].checkbox('Knowledge Tracing'):
             selected_models.append(kt_intermediate)
-        if cols_model[4].checkbox('Reinforcement Learning + Ultra 🔥'):
+        if cols_model[4].checkbox('Reinforcement Learning XGK+ Ultra'):
             st.image(image, caption='To be continued', use_column_width=False)
 
     if option == "Intermediate":
         
-        st.sidebar.text_area("Profile", "I can order 2 pints after 10PM 🍻")
+        st.sidebar.text_area("Profile", "I can order 2 pints after 10PM")
         
         selected_models = []
 
@@ -148,19 +147,19 @@ def main():
         cols_level[5].text_input('Single Texts', score_6)
         cols_level[6].text_input('Double Texts', score_7)
         
-        st.header("Learning Mode")
+        st.header("Learning Mode 📚 👨‍🏫 📲 🔥")
 
         cols_model = st.beta_columns(5)
 
-        if cols_model[0].checkbox('Textbook 📚'):
+        if cols_model[0].checkbox('Textbook'):
             selected_models.append(sorted_average)
-        if cols_model[1].checkbox('Random 🔁'):
+        if cols_model[1].checkbox('Random'):
             selected_models.append(random_average)
-        if cols_model[2].checkbox('Sadist Teacher 👨‍🏫'):
+        if cols_model[2].checkbox('Sadist Teacher'):
             selected_models.append(sadist_average)
-        if cols_model[3].checkbox('Knowledge Tracing 📲'):
+        if cols_model[3].checkbox('Knowledge Tracing'):
             selected_models.append(kt_average)
-        if cols_model[4].checkbox('Reinforcement Learning + Ultra 🔥'):
+        if cols_model[4].checkbox('Reinforcement Learning XGK+ Ultra'):
             st.image(image, caption='To be continued', use_column_width=False)
 
     if option == "Fluent":
@@ -187,19 +186,19 @@ def main():
         cols_level[5].text_input('Single Texts', score_6)
         cols_level[6].text_input('Double Texts', score_7)
 
-        st.header("Learning Mode")
+        st.header("Learning Mode 📚 👨‍🏫 📲 🔥")
 
         cols_model = st.beta_columns(5)
 
-        if cols_model[0].checkbox('Textbook 📚'):
+        if cols_model[0].checkbox('Textbook'):
             selected_models.append(sorted_fluent)
-        if cols_model[1].checkbox('Random 🔁'):
+        if cols_model[1].checkbox('Random'):
             selected_models.append(random_fluent)
-        if cols_model[2].checkbox('Sadist Teacher 👨‍🏫'):
+        if cols_model[2].checkbox('Sadist Teacher'):
             selected_models.append(random_fluent)
-        if cols_model[3].checkbox('Knowledge Tracing 📲'):
+        if cols_model[3].checkbox('Knowledge Tracing'):
             selected_models.append(kt_fluent)
-        if cols_model[4].checkbox('Reinforcement Learning + Ultra 🔥'):
+        if cols_model[4].checkbox('Reinforcement Learning XGK+ Ultra'):
             st.image(image, caption='To be continued', use_column_width=False)
 
     if st.button('Start', False):
