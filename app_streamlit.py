@@ -7,7 +7,7 @@ from Heroku.data import get_data
 from PIL import Image
 
 df = get_data()
-image = Image.open('Heroku/data/under_construction.png')
+image = Image.open('Heroku/data/under_construction.jpg')
 
 random_beginner = df['Random']
 random_intermediate = df['Random ']
@@ -82,9 +82,8 @@ def main():
         if cols_model[3].checkbox('Knowledge Tracing 📲'):
             selected_models.append(kt_beginner)
         if cols_model[4].checkbox('Reinforcement Learning + Ultra 🔥'):
-            st.write(\
-                <iframe src="https://giphy.com/embed/l1J3IHzSUmCpXThqo" width="480" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/thebachelorau-bachelor-bachelorau-l1J3IHzSUmCpXThqo">via GIPHY</a></p>)
- 
+            st.image(image, caption='To be continued', use_column_width=False)
+
     if option == "Bookworm":
 
         st.sidebar.text_area("Profile", "I've read all of Shakespeare's works but never left Lozère 🐛📚")
