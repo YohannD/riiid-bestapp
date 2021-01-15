@@ -29,21 +29,12 @@ kt_intermediate = df['Knowledge Tracing ']
 kt_average = df['Knowledge Tracing  ']
 kt_fluent = df['Knowledge Tracing   ']
 
-@st.cache
-def read_data(n_rows=10000):
-    df_train_sorted = get_train_data(type='sorted' ,n_rows=n_rows, local=True)
-    df_train_random = get_train_data(type='random', n_rows=n_rows, local=True)
-    df_test = get_test_data(local=True)
-    qstats = get_qstats(local=True)
-    return df_train_sorted, df_train_random, df_test, qstats
-
-
 def main():
     
 
     st.markdown("# Welcome to our Riiid project")
     st.markdown("** Educational technology **")
-    option = st.sidebar.selectbox("Select a sudent", ["", "Beginner", "Bookworm", "Intermediate", "Fluent"])
+    option = st.sidebar.selectbox("Select a student", ["", "Beginner", "Bookworm", "Intermediate", "Fluent"])
         
     if option == "Beginner":
 
@@ -215,7 +206,6 @@ def main():
             latest_iteration.text(f'Training for {i+1} days')
             bar.progress(i + 1)
             time.sleep(0.02)
-
 
         st.header("🎓 TOEIC probability of success")
         st.line_chart(pd.concat(selected_models, axis=1, ignore_index=False, \
