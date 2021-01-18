@@ -1,9 +1,7 @@
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import GradientBoostingClassifier
-from sklearn.preprocessing import MinMaxScaler
 from sklearn.pipeline import make_pipeline
-import seaborn as sns
 import streamlit as st
 import time
 import random

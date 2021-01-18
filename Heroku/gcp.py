@@ -1,9 +1,7 @@
 import json
 import os
-import joblib
 from google.cloud import storage
 from google.oauth2 import service_account
-from termcolor import colored
 import pickle
 from Heroku.params import *
 
