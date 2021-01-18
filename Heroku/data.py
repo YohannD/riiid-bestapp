@@ -13,7 +13,7 @@ def get_data():
     questions = pd.read_csv("gs://{}/{}".format(BUCKET_NAME, QUESTIONS_DATA_PATH))
     df_random = pd.read_csv("gs://{}/{}".format(BUCKET_NAME, RANDOM_DATA_PATH))
     df_textbook = pd.read_csv("gs://{}/{}".format(BUCKET_NAME, TEXTBOOK_DATA_PATH))
-	return pipeline, pipeline_features_list, qstats, df_random, df_textbook, questions
+    return pipeline, pipeline_features_list, qstats, df_random, df_textbook, questions
 
 def clean_df(df, test=False):
     df = df.dropna(how='any', axis='rows')
