@@ -1,5 +1,5 @@
 import pandas as pd
-from Heroku.gcp import get_credentials
+#from Heroku.gcp import get_credentials
 from google.cloud import storage
 from Heroku.params import *
 from sklearn.experimental import enable_hist_gradient_boosting
@@ -7,7 +7,7 @@ from sklearn.ensemble import HistGradientBoostingClassifier
 from Heroku.gcp import *
 import pickle
 
-creds = get_credentials()
+#creds = get_credentials()
 
 def get_data(local=False):
     client = storage.Client()
