@@ -5,12 +5,8 @@ from sklearn.pipeline import make_pipeline
 import streamlit as st
 import time
 import random
-import matplotlib.pyplot as plt
 from Heroku.utils import *
 from Heroku.data import *
-
-
-#@st.cach
 
 
 def main():
