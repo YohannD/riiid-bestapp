@@ -29,4 +29,3 @@ MODEL_NAME = 'models/xgboost_pipe_M1.pkl'
 
 # model version folder name (where the trained model.joblib file will be stored)
 MODEL_VERSION = 'Pipeline'
-
