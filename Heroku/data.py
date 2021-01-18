@@ -10,7 +10,7 @@ import pickle
 #creds = get_credentials()
 
 def get_data(local=False):
-    client = storage.Client()
+    #client = storage.Client()
     if local:
         pipeline = pickle.load(open('heroku/Heroku/data/xgboost_pipe_M1.pkl', 'rb'))
         pipeline_features_list = pd.read_csv('heroku/Heroku/data/xgboost_pipe_M1_features_list')
