@@ -11,4 +11,5 @@ flask==1.1.1
 flask-cors
 pickleshare==0.7.5
 s3fs
+scipy==1.5.4
 streamlit==0.72.0
