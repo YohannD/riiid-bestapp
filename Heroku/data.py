@@ -16,7 +16,7 @@ def get_data():
     return pipeline, pipeline_features_list, qstats, df_random, df_textbook, questions
 
 def clean_df(df, test=False):
-    df = df.dropna(how='any', axis='rows')
+    df = df.dropna(how='any', axis='rows') 
     return df
 
 if __name__ == "__main__":
