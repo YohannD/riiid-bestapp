@@ -23,7 +23,7 @@ REQUIRED_PACKAGES = [
 'gunicorn',
 's3fs',
 'herepy==2.1.1',
-'streamlit',
+'streamlit==0.72.0',
 'pickleshare==0.7.5']
 
 
