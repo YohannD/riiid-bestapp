@@ -8,5 +8,5 @@ setup(name="streamlitapp",
       version="1.0",
       description="streamlit app",
       packages=find_packages(),
-      include_package_data=True,  # includes in package files from MANIFEST.in
+      include_package_data=True,
       install_requires=requirements)
