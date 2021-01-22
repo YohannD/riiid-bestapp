@@ -1,3 +1,4 @@
+streamlit==0.72.0
 pytz
 gcsfs==0.6.0
 pandas==0.24.2
@@ -12,4 +13,3 @@ flask-cors
 pickleshare==0.7.5
 s3fs
 scipy==1.5.4
-streamlit==0.72.0
