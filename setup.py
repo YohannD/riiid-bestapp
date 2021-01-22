@@ -10,12 +10,3 @@ setup(name="streamlitapp",
       packages=find_packages(),
       include_package_data=True,  # includes in package files from MANIFEST.in
       install_requires=requirements)
-
-setup(
-    name='Riiid challenge',
-    version='1.0',
-    install_requires=REQUIRED_PACKAGES,
-    packages=find_packages(),
-    include_package_data=True,
-    description='Riiid challenge Pipeline'
-)
