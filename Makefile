@@ -20,7 +20,7 @@ set_project:
 # ----------------------------------
 APP_NAME=riiid-app
 run_streamlit:
-	-@streamlit run app_streamlit.py
+	-@streamlit run app_test.py
 
 heroku_login:
 	-@heroku login
