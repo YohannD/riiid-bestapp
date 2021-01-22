@@ -19,7 +19,7 @@ set_project:
 #         HEROKU COMMANDS
 # ----------------------------------
 APP_NAME=riiid-app
-streamlit:
+run_streamlit:
 	-@streamlit run app_streamlit.py
 
 heroku_login:
