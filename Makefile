@@ -18,7 +18,7 @@ set_project:
 # ----------------------------------
 #         HEROKU COMMANDS
 # ----------------------------------
-APP_NAME=riiid-streamlit
+APP_NAME=riiid-app
 streamlit:
 	-@streamlit run app_streamlit.py
 

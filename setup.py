@@ -15,7 +15,6 @@ REQUIRED_PACKAGES = [
 's3fs',
 'streamlit==0.72.0']
 
-
 setup(
     name='Riiid challenge',
     version='1.0',
