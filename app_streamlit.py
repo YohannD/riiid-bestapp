@@ -14,7 +14,7 @@ def main():
     st.markdown("# Welcome to our Riiid project")
     st.markdown("## What is your English proficiency level?")
     st.markdown("### Scale")
-    st.markdown("0: Beginner | 1: Intermediate | 2: Upper Intermediate | 3: Advanced")
+    st.markdown("0: Beginner | 1: Intermediate | 2: Upper Intermediate | 3: Advanced ")
     
     option = st.sidebar.selectbox("Select a student", ["My student", "Beginner", "Bookworm", "Intermediate", "Fluent"])
     pipeline, features_list, qstats, df_random, df_textbook, questions = get_data()
